@@ -1,24 +1,3 @@
-# README
+# Winter Break Intermission Work
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Build a simple Rails app, and implement GitHub OmniAuth to authenticate a user to view a list of their public repos and a separate list of their private repos.
