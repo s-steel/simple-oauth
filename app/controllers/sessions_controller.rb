@@ -27,6 +27,10 @@ class SessionsController < ApplicationController
 
     session[:user_id] = user.id
 
+    response_page_1 = Faraday.get("https://api.github.com/user/repos", {}, {"Authorization": "token #{user.token}" })
+    response_page_2 = Faraday.get("https://api.github.com/user/repos", {'page': '2'}, {"Authorization": "token #{user.token}" })
+    @repos = JSON.parse(response_page_1.body, symbolize_names: true).concat(JSON.parse(response_page_2.body, symbolize_names: true))
+
     redirect_to dashboard_path
   end
 end

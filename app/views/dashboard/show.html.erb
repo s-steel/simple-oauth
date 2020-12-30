@@ -1,1 +1,15 @@
 <h1>Welcome <%= current_user.username %>!</h1>
+
+<h3>Private Repositories:</h3>
+<% @repos.each do |repo| %>
+  <% if repo[:private] == true %>
+    <%= repo[:name] %><br>
+  <% end %>
+<% end %>
+
+<h3>Public Repositories:</h3>
+<% @repos.each do |repo| %>
+  <% if repo[:private] == false %>
+    <%= repo[:name] %><br>
+  <% end %>
+<% end %>
